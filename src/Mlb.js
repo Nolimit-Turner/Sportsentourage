@@ -141,56 +141,59 @@ const Mlb = () => {
             <button className={primaryButtonClasses}>Today</button>
             <button className={textButtonClasses}>Tomorrow</button>
           </div>
-          <ul className="divide-y divide-border">
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+          <div className={cardClasses}>
+            <ul className="divide-y divide-border">
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Pittsburgh Pirates Vs New York Mets</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+                  <span className={textForegroundClasses}>Pittsburgh Pirates Vs New York Mets</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Washington Nationals Vs St. Louis Cardinals</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+                  <span className={textForegroundClasses}>Washington Nationals Vs St. Louis Cardinals</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Detroit Tigers Vs Cleveland Guardians</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+                  <span className={textForegroundClasses}>Detroit Tigers Vs Cleveland Guardians</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Cincinnati Reds Vs Colorado Rockies</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+                  <span className={textForegroundClasses}>Cincinnati Reds Vs Colorado Rockies</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Chicago White Sox Vs Minnesota Twins</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
+                  <span className={textForegroundClasses}>Chicago White Sox Vs Minnesota Twins</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
 
-                <span className={textForegroundClasses}>Los Angeles Angels Vs Texas Rangers</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
-            </li>
-            <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-              <div className={flexCenterClasses}>
-                <span className={textForegroundClasses}>Arizona Diamondbacks Vs Atlanta Braves</span>
-              </div>
-              <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:40 PM</span>
-            </li>
-          </ul>
+                  <span className={textForegroundClasses}>Los Angeles Angels Vs Texas Rangers</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
+              </li>
+              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                <div className={flexCenterClasses}>
+
+                  <span className={textForegroundClasses}>Arizona Diamondbacks Vs Atlanta Braves</span>
+                </div>
+                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:40 PM</span>
+              </li>
+            </ul>
+          </div>
         </section>
         <aside className={cardClasses}>
           <h3 className="text-lg font-bold mb-4">STANDINGS:</h3>

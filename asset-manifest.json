@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Sportsentourage/static/css/main.d96752c0.css",
-    "main.js": "/Sportsentourage/static/js/main.754b07a0.js",
+    "main.css": "/Sportsentourage/static/css/main.3c2064cd.css",
+    "main.js": "/Sportsentourage/static/js/main.8920825a.js",
     "static/js/453.fcb1c639.chunk.js": "/Sportsentourage/static/js/453.fcb1c639.chunk.js",
     "static/media/background.jpg": "/Sportsentourage/static/media/background.7d4518e7c556e0a0022c.jpg",
     "index.html": "/Sportsentourage/index.html",
-    "main.d96752c0.css.map": "/Sportsentourage/static/css/main.d96752c0.css.map",
-    "main.754b07a0.js.map": "/Sportsentourage/static/js/main.754b07a0.js.map",
+    "main.3c2064cd.css.map": "/Sportsentourage/static/css/main.3c2064cd.css.map",
+    "main.8920825a.js.map": "/Sportsentourage/static/js/main.8920825a.js.map",
     "453.fcb1c639.chunk.js.map": "/Sportsentourage/static/js/453.fcb1c639.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d96752c0.css",
-    "static/js/main.754b07a0.js"
+    "static/css/main.3c2064cd.css",
+    "static/js/main.8920825a.js"
   ]
 }

@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css'; // Import the updated CSS file
 import background from './assets/background.jpg'; // Import the background image
 import Soccer from './Soccer'; // Import the Soccer component
+import Mlb from './Mlb'; // Import the Mlb component
 
 const NAV_LINKS = [
-  { text: 'Soccer', href: '/soccer' },
-  { text: 'MLB', href: '#' },
+  { text: 'SOCCER', href: '/soccer' },
+  { text: 'MLB', href: '/mlb' },
   { text: 'NBA', href: '#' },
   { text: 'NHL', href: '#' },
   { text: 'NFL', href: '#' },
-  { text: 'MMA', href: '#' }
 ];
 
 const App = () => {
@@ -36,6 +36,7 @@ const App = () => {
             </div>
           } />
           <Route path="/soccer" element={<Soccer />} />
+          <Route path="/mlb" element={<Mlb />} />
         </Routes>
       </div>
     </Router>

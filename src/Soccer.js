@@ -13,19 +13,12 @@ const Soccer = () => {
   return (
     <div className="min-h-screen bg-background text-foreground p-4">
       <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">SportsEntourage</h1>
+        <h1 className="text-2xl font-bold">Soccer</h1>
         <nav className="flex space-x-4">
-          <button className={primaryButtonClasses}>SOCCER</button>
-          <button className={textButtonClasses}>MLB</button>
-          <button className={textButtonClasses}>NBA</button>
-          <button className={textButtonClasses}>NHL</button>
-          <button className={textButtonClasses}>NFL</button>
-          <button className={textButtonClasses}>MMA</button>
         </nav>
       </header>
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <section className="lg:col-span-2">
-          <h2 className="text-xl font-bold mb-4">SOCCER</h2>
           <div className="flex space-x-4 mb-4">
             <button className={textButtonClasses}>Yesterday</button>
             <button className={primaryButtonClasses}>Today</button>

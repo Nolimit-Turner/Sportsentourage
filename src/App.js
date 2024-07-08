@@ -5,11 +5,12 @@ import './App.css'; // Import the updated CSS file
 import background from './assets/background.jpg'; // Import the background image
 import Soccer from './Soccer'; // Import the Soccer component
 import Mlb from './Mlb'; // Import the Mlb component
+import Nba from './Nba'; // Import the Mlb component
 
 const NAV_LINKS = [
   { text: 'SOCCER', href: '/soccer' },
   { text: 'MLB', href: '/mlb' },
-  { text: 'NBA', href: '#' },
+  { text: 'NBA', href: '/nba' },
   { text: 'NHL', href: '#' },
   { text: 'NFL', href: '#' },
 ];
@@ -37,6 +38,7 @@ const App = () => {
           } />
           <Route path="/soccer" element={<Soccer />} />
           <Route path="/mlb" element={<Mlb />} />
+          <Route path="/nba" element={<Nba />} />
         </Routes>
       </div>
     </Router>

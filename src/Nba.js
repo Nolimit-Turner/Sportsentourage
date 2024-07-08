@@ -1,5 +1,6 @@
 // src/Nba.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css'; // Reuse the CSS file for styles
 
 const primaryBadgeClasses = 'bg-primary text-primary-foreground px-2 py-1 rounded-full text-xs mr-2';
@@ -115,7 +116,6 @@ const Nba = () => {
       <header className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">NBA</h1>
         <nav className="flex space-x-4">
-          {/* Add additional links if needed */}
         </nav>
       </header>
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -129,47 +129,45 @@ const Nba = () => {
             <ul className="divide-y divide-border">
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Celtics Vs Bucks</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Celtics Vs Bucks</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Wizards Vs Pacers</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Wizards Vs Pacers</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Pistons Vs Cavaliers</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Pistons Vs Cavaliers</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Clippers Vs Nuggets</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Clippers Vs Nuggets</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Jazz Vs Timberwolves</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Jazz Vs Timberwolves</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
-
-                  <span className={textForegroundClasses}>Lakers Vs Rockets</span>
+                  <span className={primaryBadgeClasses}>NBA</span>
+                  <Link to="/live" className={textForegroundClasses}>Lakers Vs Rockets</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
               </li>
             </ul>
           </div>

@@ -1,5 +1,6 @@
 // src/Soccer.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css'; // Reuse the CSS file for styles
 
 const primaryButtonClasses = 'bg-primary text-primary-foreground px-4 py-2 rounded';
@@ -8,6 +9,8 @@ const cardClasses = 'bg-card p-4 rounded-lg';
 const mutedClasses = 'bg-muted p-2 rounded';
 const mutedForegroundClasses = 'text-muted-foreground';
 const inputClasses = 'bg-input text-foreground p-2 rounded';
+const textForegroundClasses = 'text-foreground';
+
 
 const Soccer = () => {
   return (
@@ -27,44 +30,41 @@ const Soccer = () => {
           <div className="space-y-4">
             <div className={cardClasses}>
               <h3 className="text-lg font-bold flex items-center mb-2">
-                <img src="https://placehold.co/24x24" alt="EURO icon" className="mr-2" />
-                EURO
+                <img className="mr-2" alt="Euro" />EURO
               </h3>
               <div className="space-y-2">
                 <div className={`flex justify-between items-center ${mutedClasses}`}>
-                  <span>SOCCER | Switzerland VS Germany</span>
+                  <span>SOCCER | <Link to="/live" className={textForegroundClasses}>Switzerland VS Germany</Link></span>
                   <span className={mutedForegroundClasses}>2024-06-23 12:45 PM</span>
                 </div>
                 <div className={`flex justify-between items-center ${mutedClasses}`}>
-                  <span>SOCCER | Scotland VS Hungary</span>
+                  <span>SOCCER | <Link to="/live" className={textForegroundClasses}>Scotland VS Hungary</Link></span>
                   <span className={mutedForegroundClasses}>2024-06-23 14:15 PM</span>
                 </div>
               </div>
             </div>
             <div className={cardClasses}>
               <h3 className="text-lg font-bold flex items-center mb-2">
-                <img src="https://placehold.co/24x24" alt="Copa América icon" className="mr-2" />
-                Copa América
+                <img className="mr-2" alt="Copa América" />Copa América
               </h3>
               <div className="space-y-2">
                 <div className={`flex justify-between items-center ${mutedClasses}`}>
-                  <span>SOCCER | USA VS Bolivia</span>
+                  <span>SOCCER | <Link to="/live" className={textForegroundClasses}>USA VS Bolivia</Link></span>
                   <span className={mutedForegroundClasses}>2024-06-23 18:00 PM</span>
                 </div>
                 <div className={`flex justify-between items-center ${mutedClasses}`}>
-                  <span>SOCCER | Uruguay VS Panama</span>
+                  <span>SOCCER | <Link to="/live" className={textForegroundClasses}>Uruguay VS Panama</Link></span>
                   <span className={mutedForegroundClasses}>2024-06-23 21:00 PM</span>
                 </div>
               </div>
             </div>
             <div className={cardClasses}>
               <h3 className="text-lg font-bold flex items-center mb-2">
-                <img src="https://placehold.co/24x24" alt="LaLiga 2 icon" className="mr-2" />
-                LaLiga 2
+                <img className="mr-2" alt="LaLiga 2" />LaLiga 2
               </h3>
               <div className="space-y-2">
                 <div className={`flex justify-between items-center ${mutedClasses}`}>
-                  <span>SOCCER | Espanyol VS Real Oviedo</span>
+                  <span>SOCCER | <Link to="/live" className={textForegroundClasses}>Espanyol VS Real Oviedo</Link></span>
                   <span className={mutedForegroundClasses}>2024-06-23 11:15 AM</span>
                 </div>
               </div>

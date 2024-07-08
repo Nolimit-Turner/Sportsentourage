@@ -6,6 +6,8 @@ import background from './assets/background.jpg'; // Import the background image
 import Soccer from './Soccer'; // Import the Soccer component
 import Mlb from './Mlb'; // Import the Mlb component
 import Nba from './Nba'; // Import the Mlb component
+import LiveChat from './LiveChat'; // Import the LiveChat component
+
 
 const NAV_LINKS = [
   { text: 'SOCCER', href: '/soccer' },
@@ -39,6 +41,7 @@ const App = () => {
           <Route path="/soccer" element={<Soccer />} />
           <Route path="/mlb" element={<Mlb />} />
           <Route path="/nba" element={<Nba />} />
+          <Route path="/live" element={<LiveChat />} />
         </Routes>
       </div>
     </Router>

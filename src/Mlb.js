@@ -1,5 +1,6 @@
 // src/Mlb.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css'; // Reuse the CSS file for styles
 
 const primaryBadgeClasses = 'bg-primary text-primary-foreground px-2 py-1 rounded-full text-xs mr-2';
@@ -131,7 +132,6 @@ const Mlb = () => {
       <header className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">MLB</h1>
         <nav className="flex space-x-4">
-          {/* Add additional links if needed */}
         </nav>
       </header>
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -146,49 +146,49 @@ const Mlb = () => {
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Pittsburgh Pirates Vs New York Mets</span>
+                  <Link to="/live" className={textForegroundClasses}>Pittsburgh Pirates Vs New York Mets</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Washington Nationals Vs St. Louis Cardinals</span>
+                  <Link to="/live" className={textForegroundClasses}>Washington Nationals Vs St. Louis Cardinals</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Detroit Tigers Vs Cleveland Guardians</span>
+                  <Link to="/live" className={textForegroundClasses}>Detroit Tigers Vs Cleveland Guardians</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Cincinnati Reds Vs Colorado Rockies</span>
+                  <Link to="/live" className={textForegroundClasses}>Cincinnati Reds Vs Colorado Rockies</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Chicago White Sox Vs Minnesota Twins</span>
+                  <Link to="/live" className={textForegroundClasses}>Chicago White Sox Vs Minnesota Twins</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Los Angeles Angels Vs Texas Rangers</span>
+                  <Link to="/live" className={textForegroundClasses}>Los Angeles Angels Vs Texas Rangers</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
               </li>
               <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
                 <div className={flexCenterClasses}>
 
-                  <span className={textForegroundClasses}>Arizona Diamondbacks Vs Atlanta Braves</span>
+                  <Link to="/live" className={textForegroundClasses}>Arizona Diamondbacks Vs Atlanta Braves</Link>
                 </div>
                 <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:40 PM</span>
               </li>

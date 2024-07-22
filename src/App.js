@@ -6,15 +6,23 @@ import background from './assets/background.jpg'; // Import the background image
 import Soccer from './Soccer'; // Import the Soccer component
 import Mlb from './Mlb'; // Import the Mlb component
 import Nba from './Nba'; // Import the Mlb component
+import Nhl from './Nhl'; // Import the Mlb component
+import Nfl from './Nfl'; // Import the Mlb component
 import LiveChat from './LiveChat'; // Import the LiveChat component
+import LiveChatSoccer from './LiveChatSoccer'; // Import the LiveChatSoccer component
+import LiveChatMlb from './LiveChatMlb';
+import LiveChatNba from './LiveChatNba';
+import LiveChatNhl from './LiveChatNhl';
+import LiveChatNfl from './LiveChatNfl';
+
 
 
 const NAV_LINKS = [
   { text: 'SOCCER', href: '/soccer' },
   { text: 'MLB', href: '/mlb' },
   { text: 'NBA', href: '/nba' },
-  { text: 'NHL', href: '#' },
-  { text: 'NFL', href: '#' },
+  { text: 'NHL', href: '/nhl' },
+  { text: 'NFL', href: '/nfl' },
 ];
 
 const App = () => {
@@ -41,7 +49,15 @@ const App = () => {
           <Route path="/soccer" element={<Soccer />} />
           <Route path="/mlb" element={<Mlb />} />
           <Route path="/nba" element={<Nba />} />
+          <Route path="/nhl" element={<Nhl />} />
+          <Route path="/nfl" element={<Nfl />} />
           <Route path="/live" element={<LiveChat />} />
+          <Route path="/live/:game" element={<LiveChatSoccer />} />
+          <Route path="/live-mlb/:game" element={<LiveChatMlb />} />
+          <Route path="/live-nba/:game" element={<LiveChatNba />} />
+          <Route path="/live/nhl/:game" element={<LiveChatNhl />} />
+          <Route path="/live/nfl/:game" element={<LiveChatNfl />} />
+
         </Routes>
       </div>
     </Router>

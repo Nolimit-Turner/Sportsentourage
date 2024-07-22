@@ -60,6 +60,33 @@ const westernConferenceStandings = [
   },
 ];
 
+const gamesToday = [
+  { league: 'NBA', teams: 'Celtics Vs Bucks', time: '2024-07-08 12:35 PM' },
+  { league: 'NBA', teams: 'Wizards Vs Pacers', time: '2024-07-08 16:05 PM' },
+  { league: 'NBA', teams: 'Pistons Vs Cavaliers', time: '2024-07-08 18:40 PM' },
+  { league: 'NBA', teams: 'Clippers Vs Nuggets', time: '2024-07-08 19:10 PM' },
+  { league: 'NBA', teams: 'Jazz Vs Timberwolves', time: '2024-07-08 20:10 PM' },
+  { league: 'NBA', teams: 'Lakers Vs Rockets', time: '2024-07-08 21:38 PM' },
+];
+
+const gamesYesterday = [
+  { league: 'NBA', teams: 'Nets Vs Knicks', time: '2024-07-07 12:35 PM' },
+  { league: 'NBA', teams: 'Hornets Vs Raptors', time: '2024-07-07 16:05 PM' },
+  { league: 'NBA', teams: 'Heat Vs 76ers', time: '2024-07-07 18:40 PM' },
+  { league: 'NBA', teams: 'Bulls Vs Hawks', time: '2024-07-07 19:10 PM' },
+  { league: 'NBA', teams: 'Celtics Vs Magic', time: '2024-07-07 20:10 PM' },
+  { league: 'NBA', teams: 'Warriors Vs Spurs', time: '2024-07-07 21:38 PM' },
+];
+
+const gamesTomorrow = [
+  { league: 'NBA', teams: '76ers Vs Heat', time: '2024-07-09 12:35 PM' },
+  { league: 'NBA', teams: 'Knicks Vs Nets', time: '2024-07-09 16:05 PM' },
+  { league: 'NBA', teams: 'Raptors Vs Hornets', time: '2024-07-09 18:40 PM' },
+  { league: 'NBA', teams: 'Hawks Vs Bulls', time: '2024-07-09 19:10 PM' },
+  { league: 'NBA', teams: 'Magic Vs Celtics', time: '2024-07-09 20:10 PM' },
+  { league: 'NBA', teams: 'Spurs Vs Warriors', time: '2024-07-09 21:38 PM' },
+];
+
 const StandingsTable = ({ standings }) => (
   <table className="w-full text-left">
     <thead>
@@ -103,12 +130,18 @@ const StandingsTable = ({ standings }) => (
 );
 
 const Nba = () => {
+  const [selectedDay, setSelectedDay] = useState('Today');
   const [selectedConference, setSelectedConference] = useState('Eastern Conference');
+
+  const handleDayChange = (day) => {
+    setSelectedDay(day);
+  };
 
   const handleConferenceChange = (event) => {
     setSelectedConference(event.target.value);
   };
 
+  const games = selectedDay === 'Yesterday' ? gamesYesterday : selectedDay === 'Tomorrow' ? gamesTomorrow : gamesToday;
   const standings = selectedConference === 'Eastern Conference' ? easternConferenceStandings : westernConferenceStandings;
 
   return (
@@ -121,54 +154,36 @@ const Nba = () => {
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <section className="lg:col-span-2">
           <div className="flex space-x-4 mb-4">
-            <button className={textButtonClasses}>Yesterday</button>
-            <button className={primaryButtonClasses}>Today</button>
-            <button className={textButtonClasses}>Tomorrow</button>
+            <button
+              className={`${selectedDay === 'Yesterday' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Yesterday')}
+            >
+              Yesterday
+            </button>
+            <button
+              className={`${selectedDay === 'Today' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Today')}
+            >
+              Today
+            </button>
+            <button
+              className={`${selectedDay === 'Tomorrow' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Tomorrow')}
+            >
+              Tomorrow
+            </button>
           </div>
           <div className={cardClasses}>
             <ul className="divide-y divide-border">
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Celtics Vs Bucks</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Wizards Vs Pacers</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Pistons Vs Cavaliers</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Clippers Vs Nuggets</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Jazz Vs Timberwolves</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-                  <span className={primaryBadgeClasses}>NBA</span>
-                  <Link to="/live" className={textForegroundClasses}>Lakers Vs Rockets</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
-              </li>
+              {games.map((game, index) => (
+                <li key={index} className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                  <div className={flexCenterClasses}>
+                    <span className={primaryBadgeClasses}>{game.league}</span>
+                    <Link to={`/live-nba/${game.teams.replace(/\s+/g, '-').toLowerCase()}`} className={textForegroundClasses}>{game.teams}</Link>
+                  </div>
+                  <span className={textMutedForegroundClasses + ' text-sm'}>{game.time}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </section>

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css'; // Reuse the CSS file for styles
 
-const primaryBadgeClasses = 'bg-primary text-primary-foreground px-2 py-1 rounded-full text-xs mr-2';
 const primaryButtonClasses = 'bg-primary text-primary-foreground px-4 py-2 rounded';
 const textButtonClasses = 'text-foreground hover:text-primary';
 const textForegroundClasses = 'text-foreground';
@@ -118,14 +117,50 @@ const StandingsTable = ({ standings }) => (
   </table>
 );
 
+const gamesToday = [
+  { teams: "Pittsburgh Pirates Vs New York Mets", time: "2024-07-08 12:35 PM" },
+  { teams: "Washington Nationals Vs St. Louis Cardinals", time: "2024-07-08 16:05 PM" },
+  { teams: "Detroit Tigers Vs Cleveland Guardians", time: "2024-07-08 18:40 PM" },
+  { teams: "Cincinnati Reds Vs Colorado Rockies", time: "2024-07-08 19:10 PM" },
+  { teams: "Chicago White Sox Vs Minnesota Twins", time: "2024-07-08 20:10 PM" },
+  { teams: "Los Angeles Angels Vs Texas Rangers", time: "2024-07-08 21:38 PM" },
+  { teams: "Arizona Diamondbacks Vs Atlanta Braves", time: "2024-07-08 21:40 PM" }
+];
+
+const gamesYesterday = [
+  { teams: "Boston Red Sox Vs Baltimore Orioles", time: "2024-07-07 12:35 PM" },
+  { teams: "Toronto Blue Jays Vs Tampa Bay Rays", time: "2024-07-07 16:05 PM" },
+  { teams: "Kansas City Royals Vs Chicago White Sox", time: "2024-07-07 18:40 PM" },
+  { teams: "Houston Astros Vs Los Angeles Angels", time: "2024-07-07 19:10 PM" },
+  { teams: "Seattle Mariners Vs Oakland Athletics", time: "2024-07-07 20:10 PM" },
+  { teams: "Texas Rangers Vs New York Yankees", time: "2024-07-07 21:38 PM" },
+  { teams: "Cleveland Guardians Vs Detroit Tigers", time: "2024-07-07 21:40 PM" }
+];
+
+const gamesTomorrow = [
+  { teams: "San Francisco Giants Vs San Diego Padres", time: "2024-07-09 12:35 PM" },
+  { teams: "Milwaukee Brewers Vs St. Louis Cardinals", time: "2024-07-09 16:05 PM" },
+  { teams: "Arizona Diamondbacks Vs Colorado Rockies", time: "2024-07-09 18:40 PM" },
+  { teams: "Miami Marlins Vs Atlanta Braves", time: "2024-07-09 19:10 PM" },
+  { teams: "Chicago Cubs Vs Cincinnati Reds", time: "2024-07-09 20:10 PM" },
+  { teams: "Los Angeles Dodgers Vs Washington Nationals", time: "2024-07-09 21:38 PM" },
+  { teams: "Philadelphia Phillies Vs New York Mets", time: "2024-07-09 21:40 PM" }
+];
+
 const Mlb = () => {
+  const [selectedDay, setSelectedDay] = useState('Today');
   const [selectedLeague, setSelectedLeague] = useState('American League');
+
+  const handleDayChange = (day) => {
+    setSelectedDay(day);
+  };
 
   const handleLeagueChange = (event) => {
     setSelectedLeague(event.target.value);
   };
 
   const standings = selectedLeague === 'American League' ? americanLeagueStandings : nationalLeagueStandings;
+  const games = selectedDay === 'Yesterday' ? gamesYesterday : selectedDay === 'Tomorrow' ? gamesTomorrow : gamesToday;
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4">
@@ -137,61 +172,35 @@ const Mlb = () => {
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <section className="lg:col-span-2">
           <div className="flex space-x-4 mb-4">
-            <button className={textButtonClasses}>Yesterday</button>
-            <button className={primaryButtonClasses}>Today</button>
-            <button className={textButtonClasses}>Tomorrow</button>
+            <button
+              className={`${selectedDay === 'Yesterday' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Yesterday')}
+            >
+              Yesterday
+            </button>
+            <button
+              className={`${selectedDay === 'Today' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Today')}
+            >
+              Today
+            </button>
+            <button
+              className={`${selectedDay === 'Tomorrow' ? primaryButtonClasses : textButtonClasses}`}
+              onClick={() => handleDayChange('Tomorrow')}
+            >
+              Tomorrow
+            </button>
           </div>
           <div className={cardClasses}>
             <ul className="divide-y divide-border">
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Pittsburgh Pirates Vs New York Mets</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 12:35 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Washington Nationals Vs St. Louis Cardinals</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 16:05 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Detroit Tigers Vs Cleveland Guardians</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 18:40 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Cincinnati Reds Vs Colorado Rockies</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 19:10 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Chicago White Sox Vs Minnesota Twins</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 20:10 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Los Angeles Angels Vs Texas Rangers</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:38 PM</span>
-              </li>
-              <li className={flexJustifyBetweenClasses + ' ' + py2Classes}>
-                <div className={flexCenterClasses}>
-
-                  <Link to="/live" className={textForegroundClasses}>Arizona Diamondbacks Vs Atlanta Braves</Link>
-                </div>
-                <span className={textMutedForegroundClasses + ' text-sm'}>2024-07-08 21:40 PM</span>
-              </li>
+              {games.map((game, index) => (
+                <li key={index} className={flexJustifyBetweenClasses + ' ' + py2Classes}>
+                  <div className={flexCenterClasses}>
+                    <Link to={`/live-mlb/${encodeURIComponent(game.teams)}`} className={textForegroundClasses}>{game.teams}</Link>
+                  </div>
+                  <span className={textMutedForegroundClasses + ' text-sm'}>{game.time}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </section>

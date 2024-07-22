@@ -78,9 +78,9 @@ const LiveChatMlb = () => {
           <div className="text-center">
             <p className="text-xl font-bold">LIVE SCORE</p>
             <div className="flex items-center space-x-8">
-              <p className="text-3xl font-bold">110</p>
+              <p className="text-3xl font-bold">7</p>
               <p className="text-xl">{formatTime(time)}</p>
-              <p className="text-3xl font-bold">0</p>
+              <p className="text-3xl font-bold">3</p>
             </div>
           </div>
           <img src={flagUrl2} alt="Team 2 Flag" />
